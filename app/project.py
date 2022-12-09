@@ -3,7 +3,7 @@ import requests
 import json
 from IPython.display import Image, display 
 from app.alpha import API_KEY
-
+from pandas import read_csv
 
 def format_pct(my_number):
     """
