@@ -17,11 +17,16 @@ def project_dashboard():
         latest_rate_pct = (float(latest["value"]))
         latest_date = latest["date"]
 
+        retaildata = fetch_RS_data()
+        latest = data[0]
+        latest_rate_pct = (float(latest["value"]))
+        latest_date = latest["date"]
+
         #flash("Fetched Latest GDP Data!", "success")
         return render_template("project_dashboard.html",
             latest_rate_pct=latest_rate_pct,
             latest_date=latest_date,
-            data=data
+            data=data, retaildata=retaildata 
         )
     except Exception as err:
         print('OOPS', err)
@@ -35,11 +40,12 @@ def project_dashboard():
 
 @project_routes.route("/api/project.json")
 def GDP_api():
-    print("GDP DATA (API)...")
+    print("GDP/Retail DATA (API)...")
 
     try:
         data = fetch_GDP_data()
-        return data
+        retaildata = fetch_RS_data()
+        return data, retaildata
     except Exception as err:
         print('OOPS', err)
         return {"message":"Unemployment Data Error. Please try again."}, 404
