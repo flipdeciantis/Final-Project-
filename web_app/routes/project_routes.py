@@ -2,7 +2,7 @@
 
 from flask import Blueprint, request, render_template, redirect, flash
 
-from app.project import fetch_GDP_data, format_pct
+from app.project import fetch_GDP_data, format_pct, fetch_RS_data
 
 project_routes = Blueprint("project_routes", __name__)
 
@@ -14,7 +14,7 @@ def project_dashboard():
     try:
         data = fetch_GDP_data()
         latest = data[0]
-        latest_rate_pct = format_pct(float(latest["value"]))
+        latest_rate_pct = (float(latest["value"]))
         latest_date = latest["date"]
 
         #flash("Fetched Latest GDP Data!", "success")
@@ -26,7 +26,7 @@ def project_dashboard():
     except Exception as err:
         print('OOPS', err)
         breakpoint()
-        #flash("Unemployment Data Error. Please try again!", "danger")
+        #flash("GDP Data Error. Please try again!", "danger")
         return redirect("/")
 
 #
