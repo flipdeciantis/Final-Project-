@@ -33,7 +33,7 @@ def project_dashboard():
 # API ROUTES
 #
 
-@project_routes.route("/api/unemployment.json")
+@project_routes.route("/api/project.json")
 def GDP_api():
     print("GDP DATA (API)...")
 
