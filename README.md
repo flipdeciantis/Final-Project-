@@ -29,6 +29,8 @@
 
 ## Setup/Configuration
 
+conda create -n project-env python=3.8
+
 ### Web App
 
 Run the web app (then view in the browser at http://localhost:5000/):
