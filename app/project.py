@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     print("Retail Sales REPORT...")
 
-    dataa = fetch_RS_data()
+    data = fetch_RS_data()
 
     print("-------------------------")
     print("LATEST Retail Sales RATE:")

@@ -53,7 +53,9 @@
         var dates = GDPData.map(obj => obj["date"])
         var rates = GDPData.map(obj => parseFloat(obj["value"]))
 
-        var RSData = JSON.parse('{{dataa | tojson}}')
+        data = fetch_RS_data()
+
+        var RSData = JSON.parse('{{data | tojson}}')
         console.log(RSData)
 
         var dates2 = RSData.map(obj => obj["date"])
