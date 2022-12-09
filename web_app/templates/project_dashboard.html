@@ -6,7 +6,7 @@
 
     <h2>Project Dashboard</h2>
 
-    <p class="lead">Latest Rate: {{ latest_rate_pct }} (as of {{ latest_date }})</p>
+    <p class="lead">Latest Level: {{ latest_rate_pct }} (as of {{ latest_date }})</p>
 
     <div id="chart-container" height="700px"></div>
 
@@ -51,13 +51,13 @@
         console.log(GDPData)
 
         var dates = GDPData.map(obj => obj["date"])
-        var rates = GDPData.map(obj => parseFloat(obj["value"]) / 100.0)
+        var rates = GDPData.map(obj => parseFloat(obj["value"]))
 
-        var RSData = JSON.parse('{{data | tojson}}')
+        var RSData = JSON.parse('{{dataa | tojson}}')
         console.log(RSData)
 
         var dates2 = RSData.map(obj => obj["date"])
-        var rates2 = RSData.map(obj => parseFloat(obj["value"]) / 100.0)
+        var rates2 = RSData.map(obj => parseFloat(obj["value"]) /)
 
         // visualize the data
         // see: https://plotly.com/javascript/line-charts/
@@ -74,7 +74,7 @@
         
         var data = [series, series2]
         var layout = {
-            title: "GDP Rate by Year",
+            title: "GDP/Retail Sales Level by Year",
             height: 600,
             yaxis: {
                 //tickformat: '%' // https://plotly.com/javascript/tick-formatting/
