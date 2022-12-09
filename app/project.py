@@ -49,7 +49,7 @@ def fetch_RS_data():
 
     parsed_response = json.loads(response.text)
     
-    return parsed_response["dataa"]
+    return parsed_response["data"]
 
 
 if __name__ == "__main__":
