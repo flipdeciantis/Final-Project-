@@ -78,5 +78,5 @@ flask run
 Run tests:
 
 ```sh
-pytest
+pytest -s
 ```
